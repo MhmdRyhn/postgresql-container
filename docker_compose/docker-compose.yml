@@ -3,9 +3,10 @@ version: "3.0"
 
 services:
   # Service for the PostgreSQL Database
-  database:
-    # Pull the latest postgres image
-    image: "postgres"
+  postgres:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
     container_name: "postgres-docker-container"
     # Postgres environment parameters
     environment:
@@ -20,5 +21,4 @@ services:
       - 5434:5432
     # Bind mount the local volume/disk to postgres container volume
     volumes:
-      - ./init.sh:/docker-entrypoint-initdb.d/init.sh
       - ~/pg-data:/var/lib/postgresql/data

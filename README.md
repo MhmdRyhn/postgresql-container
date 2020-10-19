@@ -2,6 +2,13 @@
 PostgreSQL setup with Database, User and Roles in a Docker container.
 
 
+## Build And Run Using docker-compose
+- The following command will build and start the container. Make sure you are in **docker_compose** directory.
+```shell script
+docker-compose up -d
+```
+
+
 ## Build The Image
 - To build the image, run the `build.sh` script. Make sure the script has executable permission. 
 To allow the script executable permission, run `sudo chmod +x build.sh`
